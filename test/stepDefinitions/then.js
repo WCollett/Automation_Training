@@ -1,12 +1,12 @@
 import { Then } from 'cucumber';
-import myAccount from '../pageobjects/ta-myaccount.page';
-import yahooPage from '../pageobjects/yahoo-search.page';
+import loginPage from '../pageobjects/login.page';
+import registerPage from '../pageobjects/register.page';
 
-Then(/^I should see a list of search results$/, function () {
-  yahooPage.isSearched().should.be.true;
+
+Then('I should see the logout link', function () {
+  loginPage.isLogoutShowing().should.be.true;
 });
 
-// *** belongs to ta-loging  feature
-Then(/^I should see the message "([^"]*)" on my account page$/, function (message) {
-  myAccount.getUserInfo().should.equal(message);
+Then('I should see the register logout link', function () {
+  registerPage.isLogoutShowing().should.be.true;
 });
