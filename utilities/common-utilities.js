@@ -338,6 +338,23 @@ module.exports = {
   },
 
 /***************************************************************************************/
+  //method to generate timecode in the format: mmddyyhhmiss
+/***************************************************************************************/
+getTimeCode : function () {
+  var now = new Date();
+  return ((now.getMonth() + 1) +
+          (now.getDate()) +
+            now.getFullYear() +
+            now.getHours() +
+            ((now.getMinutes() < 10)
+                ? ("0" + now.getMinutes())
+                : (now.getMinutes())) +
+             ((now.getSeconds() < 10)
+                ? ("0" + now.getSeconds())
+                : (now.getSeconds())));
+},
+
+/***************************************************************************************/
 /**
  * function elementWait (locater, timeout)
  * This function will wait for an element for the provided amount of milliseconds to be present.
