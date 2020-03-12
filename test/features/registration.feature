@@ -9,7 +9,9 @@ Feature: Registering a new user
         Given I am on the Registration Page
 
     Scenario Outline: Performing New Registration operation with passing test data as test table
-        When I register with name email and password <first> <last> <email> <password> <confirm> into the text box
+        When I enter a first and last name <first> <last> on the registration page
+        And I enter new credential information <email> <password> <confirm> on the registration page 
+        And I click the Register button
         Then I should see the register logout link
 
         Examples:
